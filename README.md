@@ -6,6 +6,8 @@ At present, a very simple Cortex-M binary is built and linked via `cargo build` 
 Later on I'll see about playing around with LEDs, serial interfaces, GPIO pins and other peripherals.
 Crates will be added only then they are required.
 
+Eventually I'll see about working with [RTFM](http://blog.japaric.io/fearless-concurrency/).
+
 Setup
 ====
 
