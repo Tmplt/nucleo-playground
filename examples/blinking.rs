@@ -1,3 +1,8 @@
+//! A simple no-HAL example for blinking an LED
+//!
+//! # Usage
+//! `cargo [build|run] --example blinking`
+
 #![no_main]
 #![no_std]
 
@@ -23,7 +28,7 @@ fn wait(i: u32) {
 
 #[entry]
 fn main() -> ! {
-    let _cp = cortex_m::Peripherals::take().unwrap();
+    // Take device peripherals
     let dp = stm32f401::Peripherals::take().unwrap();
 
     // power of GPIOA
