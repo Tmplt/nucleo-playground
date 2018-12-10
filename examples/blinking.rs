@@ -20,7 +20,7 @@ fn set_led(gpioa: &GPIOA, state: bool) {
     gpioa.odr.modify(|_, w| w.odr5().bit(state));
 }
 
-fn wait(i: u32) {
+fn sleep(i: u32) {
     for _ in 0..i {
         cortex_m::asm::nop();
     }
@@ -31,7 +31,7 @@ fn main() -> ! {
     // Take device peripherals
     let dp = stm32f401::Peripherals::take().unwrap();
 
-    // power of GPIOA
+    // power on GPIOA
     dp.RCC.ahb1enr.modify(|_, w| w.gpioaen().set_bit());
 
     // configure PA5 as output
@@ -47,6 +47,6 @@ fn main() -> ! {
         }
 
         // Wait a little bit
-        wait(10_000_u32);
+        sleep(10_000_u32);
     }
 }
