@@ -8,4 +8,5 @@ edition = "2018"
 cortex-m = "0.5.0"
 panic-halt = "0.2.0"
 cortex-m-rt = "0.6.3"
+cortex-m-rtfm = { git = "https://github.com/japaric/cortex-m-rtfm.git" }
 stm32f401 = { path = "../stm32f401" }
